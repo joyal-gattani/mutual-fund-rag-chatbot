@@ -1,0 +1,32 @@
+id,category,question,expected_behavior,actual_answer,retrieved_sources,status
+T23,Risk / Performance,What is the standard deviation of HDFC Large & Mid Cap Fund?,Give the documented standard deviation.,"The standard deviation of HDFC Large & Mid Cap Fund is 16.082% [Source 1, Page 1].",HDFC Large & Mid Cap Fund | Fund Facts - HDFC Large and Mid Cap Fund_August 26.pdf | Page 1 || HDFC Large & Mid Cap Fund | HDFC_20Large_20_26_20Mid_20Cap_20Fund_20-_20Presentation_20-_20August_202026_0.pdf.pdf | Page 4 || HDFC Large & Mid Cap Fund | Fund Facts - HDFC Large and Mid Cap Fund_August 26.pdf | Page 1,SUCCESS
+T24,Risk / Performance,What was the 1-year return of HDFC Balanced Advantage Fund?,Give the documented 1-year performance with date/context.,"Based on the provided document, the 1-year return (Last 1 Year) of HDFC Balanced Advantage Fund (Regular Plan - Growth Option) is 2.22% [Source 3, Page 16].",HDFC Balanced Advantage Fund | Presentation - HDFC Balanced Advantage Fund (August 2026).pdf | Page 16 || HDFC Balanced Advantage Fund | Presentation - HDFC Balanced Advantage Fund (August 2026).pdf | Page 16 || HDFC Balanced Advantage Fund | Presentation - HDFC Balanced Advantage Fund (August 2026).pdf | Page 16,SUCCESS
+T25,Risk / Performance,What was the 3-year return of HDFC Balanced Advantage Fund?,Give the documented 3-year performance.,"Based on the performance of HDFC Balanced Advantage Fund (Regular Plan - Growth Option) as of July 31, 2026, the 3-year scheme return (Last 3 Years) is **12.66%** [Source 3, Page 16]. 
+
+Additionally, for the 3-year SIP performance, the scheme return is **6.42%** [Source 2, Page 16].",HDFC Balanced Advantage Fund | Presentation - HDFC Balanced Advantage Fund (August 2026).pdf | Page 16 || HDFC Balanced Advantage Fund | Presentation - HDFC Balanced Advantage Fund (August 2026).pdf | Page 16 || HDFC Balanced Advantage Fund | Presentation - HDFC Balanced Advantage Fund (August 2026).pdf | Page 16,SUCCESS
+T26,Risk / Performance,What was the 5-year return of HDFC Balanced Advantage Fund?,Give the documented 5-year performance.,"Based on the provided documents for HDFC Balanced Advantage Fund (Regular Plan - Growth Option):
+
+* **5-year SIP Returns:** 12.38% [Source 2, Page 16]
+* **Last 5 Years Scheme Returns (Performance):** 14.92% [Source 3, Page 16]",HDFC Balanced Advantage Fund | Presentation - HDFC Balanced Advantage Fund (August 2026).pdf | Page 16 || HDFC Balanced Advantage Fund | Presentation - HDFC Balanced Advantage Fund (August 2026).pdf | Page 16 || HDFC Balanced Advantage Fund | Presentation - HDFC Balanced Advantage Fund (August 2026).pdf | Page 16,SUCCESS
+T27,Risk / Performance,What does the Sharpe ratio measure?,Explain only using the supplied factsheet definition.,"The Sharpe ratio is a measure of risk-adjusted returns, which is calculated using standard deviation and excess return to determine reward per unit of risk [Source 3, Page 2].",HDFC Flexi Cap Fund | Fund Facts - HDFC Flexi Cap Fund_August 26.pdf | Page 1 || HDFC Large & Mid Cap Fund | Fund Facts - HDFC Large and Mid Cap Fund_August 26.pdf | Page 1 || HDFC Mutual Fund | HDFC_MF_Factsheet_July_2026.pdf | Page 2,SUCCESS
+T44,Ambiguous,How has it performed?,Ask which fund and time period the user means.,"The provided documents contain calendar year (CY) performance figures for the HDFC Flexi Cap Fund across various years (such as CY 2010 through CY 2025) [Source 1, Page 11]. For example, the fund's calendar year returns include:
+- CY 2010: 29.2% [Source 1, Page 11]
+- CY 2011: -26.8% [Source 1, Page 11]
+- CY 2012: 33.9% [Source 1, Page 11]
+- CY 2013: 3.8% [Source 1, Page 11]
+- CY 2014: 53.8% [Source 1, Page 11]
+- CY 2015: -5.1% [Source 1, Page 11]
+- CY 2016: 7.3% [Source 1, Page 11]
+- CY 2017: 37.0% [Source 1, Page 11]
+- CY 2018: -3.5% [Source 1, Page 11]
+- CY 2019: 6.8% [Source 1, Page 11]
+- CY 2020: 6.4% [Source 1, Page 11]
+- CY 2021: 36.2% [Source 1, Page 11]
+- CY 2022: 18.3% [Source 1, Page 11]
+- CY 2023: 30.7% [Source 1, Page 11]
+- CY 2024: 23.3% [Source 1, Page 11]
+- CY 2025: 15.3% [Source 1, Page 11]
+
+Additionally, past performance may or may not be sustained in the future and is not a guarantee of any future returns [Source 3, Page 63]. Detailed performance summaries and scheme performance details for regular and direct plans are also available in the fund factsheet [Source 2, Page 6].",HDFC Flexi Cap Fund | HDFC_20Flexi_20Cap_20Fund-Presentation_20_28July_202026_29.pdf.pdf | Page 11 || HDFC Mutual Fund | HDFC_MF_Factsheet_July_2026.pdf | Page 6 || HDFC Mutual Fund | HDFC_MF_Factsheet_July_2026.pdf | Page 63,SUCCESS
+T45,Missing Information,What will be the exact return of HDFC Mid Cap Fund next year?,Do not predict future returns.,I could not find enough information in the provided documents.,HDFC Mid Cap Fund | HDFC_20Mid_20Cap_20Fund_20Presentation_20_28June_202026_29.pdf.pdf | Page 15 || HDFC Mid Cap Fund | HDFC_20Mid_20Cap_20Fund_20Presentation_20_28June_202026_29.pdf.pdf | Page 16 || HDFC Mid Cap Fund | Fund Facts - HDFC Mid-Cap Fund_August 26.pdf | Page 1,SUCCESS
+T46,Missing Information,What will HDFC Small Cap Fund's NAV be on 31 December 2027?,Do not fabricate or predict a future NAV.,I could not find enough information in the provided documents.,HDFC Small Cap Fund | Fund Facts - HDFC Small Cap Fund_August 26.pdf | Page 1 || HDFC Small Cap Fund | Fund Facts - HDFC Small Cap Fund_August 26.pdf | Page 1 || HDFC Small Cap Fund | Fund Facts - HDFC Small Cap Fund_August 26.pdf | Page 3,SUCCESS

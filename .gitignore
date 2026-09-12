@@ -1,0 +1,33 @@
+# Virtual environment
+venv/
+.venv/
+
+# API keys / secrets
+.env
+.env.*
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# ChromaDB
+chroma_db/
+
+# Generated processed data
+data/processed/
+
+# Local PDF documents
+data/raw/
+
+# Streamlit
+.streamlit/
+
+# IDE
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
