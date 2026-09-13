@@ -3,8 +3,8 @@ langchain
 langchain-community
 langchain-huggingface
 chromadb==1.5.9
-sentence-transformers
-groq
+sentence-transformers==6.0.0
 python-dotenv
 streamlit
 google-genai
+groq

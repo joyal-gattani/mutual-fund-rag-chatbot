@@ -1,35 +1,24 @@
-# Virtual environment
 venv/
 .venv/
 
-# API keys / secrets
 .env
 .env.*
 
-# Python cache
 __pycache__/
 *.py[cod]
 
-# Generated processed data
-data/processed/
-
-# Local PDF documents
-data/raw/
-
-# Streamlit
-.streamlit/
-
-# IDE
-.vscode/
-
-# OS files
-.DS_Store
-Thumbs.db
-
-# Logs
-*.log
+chroma_db/
 
 data/processed/*
 !data/processed/chunks.json
 
-chroma_db/
+data/raw/
+
+.streamlit/
+
+.vscode/
+
+.DS_Store
+Thumbs.db
+
+*.log
