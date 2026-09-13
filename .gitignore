@@ -10,9 +10,6 @@ venv/
 __pycache__/
 *.py[cod]
 
-# ChromaDB
-chroma_db/
-
 # Generated processed data
 data/processed/
 
