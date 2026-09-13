@@ -1,5 +1,4 @@
 import json
-import shutil
 from pathlib import Path
 
 import chromadb
@@ -7,7 +6,6 @@ from langchain_huggingface import HuggingFaceEmbeddings
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-CHROMA_PATH = BASE_DIR / "chroma_db"
 CHUNKS_PATH = BASE_DIR / "data" / "processed" / "chunks.json"
 
 COLLECTION_NAME = "hdfc_mutual_funds"
@@ -15,51 +13,14 @@ COLLECTION_NAME = "hdfc_mutual_funds"
 
 def initialize_database():
 
-    # First try existing database
-    if CHROMA_PATH.exists():
+    print("Creating in-memory ChromaDB...")
 
-        try:
-            client = chromadb.PersistentClient(
-                path=str(CHROMA_PATH)
-            )
+    # No persistent SQLite/database files
+    client = chromadb.EphemeralClient()
 
-            collection = client.get_collection(
-                name=COLLECTION_NAME
-            )
-
-            print(
-                f"Existing collection found: "
-                f"{COLLECTION_NAME}"
-            )
-
-            print(
-                f"Documents: {collection.count()}"
-            )
-
-            return collection
-
-        except Exception:
-            print(
-                "Existing ChromaDB is invalid or incompatible."
-            )
-            print("Removing old database...")
-
-            shutil.rmtree(
-                CHROMA_PATH,
-                ignore_errors=True
-            )
-
-    # Create a completely fresh database
-    CHROMA_PATH.mkdir(
-        parents=True,
-        exist_ok=True
+    collection = client.create_collection(
+        name=COLLECTION_NAME
     )
-
-    client = chromadb.PersistentClient(
-        path=str(CHROMA_PATH)
-    )
-
-    print("Creating fresh ChromaDB...")
 
     with open(
         CHUNKS_PATH,
@@ -68,29 +29,17 @@ def initialize_database():
     ) as f:
         chunks = json.load(f)
 
-    print(
-        f"Loaded {len(chunks)} chunks."
-    )
+    print(f"Loaded {len(chunks)} chunks.")
 
     embeddings = HuggingFaceEmbeddings(
         model_name="sentence-transformers/all-MiniLM-L6-v2"
     )
 
-    collection = client.create_collection(
-        name=COLLECTION_NAME
-    )
-
     batch_size = 100
 
-    for start in range(
-        0,
-        len(chunks),
-        batch_size
-    ):
+    for start in range(0, len(chunks), batch_size):
 
-        batch = chunks[
-            start:start + batch_size
-        ]
+        batch = chunks[start:start + batch_size]
 
         texts = [
             item["text"]
@@ -107,9 +56,7 @@ def initialize_database():
             for item in batch
         ]
 
-        vectors = embeddings.embed_documents(
-            texts
-        )
+        vectors = embeddings.embed_documents(texts)
 
         collection.add(
             ids=ids,
@@ -125,8 +72,7 @@ def initialize_database():
         )
 
     print(
-        f"Database ready: "
-        f"{collection.count()} documents"
+        f"Database ready: {collection.count()} documents"
     )
 
     return collection

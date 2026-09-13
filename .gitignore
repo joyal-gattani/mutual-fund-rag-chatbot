@@ -31,3 +31,5 @@ Thumbs.db
 
 data/processed/*
 !data/processed/chunks.json
+
+chroma_db/
