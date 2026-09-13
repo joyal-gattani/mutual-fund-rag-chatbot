@@ -2,11 +2,10 @@ import os
 import re
 from pathlib import Path
 
-import chromadb
 from dotenv import load_dotenv
 from google import genai
 
-from src.keyword_retrieval import keyword_search
+from src.keyword_retrieval import keyword_search, collection
 
 
 # ============================================================
@@ -14,8 +13,6 @@ from src.keyword_retrieval import keyword_search
 # ============================================================
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-CHROMA_PATH = BASE_DIR / "chroma_db"
 
 MODEL_NAME = "gemini-3.5-flash-lite"
 
@@ -35,19 +32,6 @@ if not GEMINI_API_KEY:
 
 client_gemini = genai.Client(
     api_key=GEMINI_API_KEY
-)
-
-
-# ============================================================
-# CHROMA DATABASE
-# ============================================================
-
-chroma_client = chromadb.PersistentClient(
-    path=str(CHROMA_PATH)
-)
-
-collection = chroma_client.get_collection(
-    name="hdfc_mutual_funds"
 )
 
 
