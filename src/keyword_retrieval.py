@@ -8,13 +8,9 @@ from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
-chroma_client = chromadb.PersistentClient(
-    path=str(PROJECT_ROOT / "chroma_db")
-)
+from src.db_init import initialize_database
 
-collection = chroma_client.get_collection(
-    name="hdfc_mutual_funds"
-)
+collection = initialize_database()
 
 
 # ============================================================
